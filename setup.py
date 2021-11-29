@@ -27,11 +27,11 @@ if version.endswith(('a', 'b', 'rc')):
 
 setup(name='discord-ext-menus',
       author='Rapptz',
-      url='https://github.com/Rapptz/discord-ext-menus',
+      url='https://github.com/sniff122Development/discord-ext-menus',
       version=version,
       packages=['discord.ext.menus'],
       license='MIT',
-      description='An extension module to make reaction based menus with discord.py',
-      install_requires=['discord.py>=1.2.5'],
+      description='An extension module to make reaction based menus with py-cord',
+      install_requires=['py-cord'],
       python_requires='>=3.5.3'
 )
