@@ -1018,8 +1018,9 @@ class MenuPages(Menu):
         """go to the last page"""
         # The call here is safe because it's guarded by skip_if
         if payload.event_type == "REACTION_ADD":
-            if self.message.channel.permissions_for(self.message.guild.me).manage_messages:
-                await self.message.remove_reaction(payload.emoji, discord.Object(payload.user_id))
+            if self.message.guild is not None:
+                if self.message.channel.permissions_for(self.message.guild.me).manage_messages:
+                    await self.message.remove_reaction(payload.emoji, discord.Object(payload.user_id))
             await self.show_page(self._source.get_max_pages() - 1)
 
     @button('\N{BLACK SQUARE FOR STOP}\ufe0f', position=Last(2))
